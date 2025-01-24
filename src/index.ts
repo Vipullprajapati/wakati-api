@@ -1,17 +1,11 @@
 import { OpenAPIHono } from '@hono/zod-openapi';
-import { pinoLogger } from 'hono-pino';
 // import { logger } from 'hono/logger';
 import { notFound, onError } from 'stoker/middlewares';
+import logger from './middleware/logger';
 
-const app = new OpenAPIHono();
-
-function logger() {
-  return pinoLogger({
-    http: {
-      reqId: () => crypto.randomUUID(),
-    },
-  });
-}
+const app = new OpenAPIHono({
+  strict: false,
+});
 
 // app.use(pinoLogger());
 app.use(logger());
