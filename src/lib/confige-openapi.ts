@@ -14,6 +14,7 @@ export default function configeOpenAPI(app: OpenAPIHono) {
   app.get(
     '/reference',
     apiReference({
+      theme: 'purple',
       spec: {
         url: '/doc',
       },

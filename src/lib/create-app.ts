@@ -4,10 +4,20 @@ import { notFound, onError } from 'stoker/middlewares';
 import logger from '../middleware/logger';
 // import { openapi } from 'stoker';
 
-export default function createApp() {
+
+// create router function
+export function createRouter() {
   const app = new OpenAPIHono({
+    // par bhi chalta hai
     strict: false,
   });
+  return app;
+}
+
+// create app function
+
+export default function createApp() {
+  const app = createRouter();
 
   // app.use(pinoLogger());
   app.use(logger());
