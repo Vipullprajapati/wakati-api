@@ -32,3 +32,5 @@ bun add stoker {installation}
 9- bun add hono
 ```bun add hono-pino```
 
+10-bun add @scalar/hono-api-reference
+
